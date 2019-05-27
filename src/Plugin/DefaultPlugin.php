@@ -260,6 +260,7 @@ class DefaultPlugin extends AbstractPlugin
 
         $parameters = array(
             'amount'        => $payment->getTargetAmount(),
+            'currency'      => $payment->getPaymentInstruction()->getCurrency(),
             'description'   => $data->has('description') ? $data->get('description') : 'Transaction ' . $payment->getId(),
             'returnUrl'     => $data->get('return_url'),
             'paymentMethod' => $this->getMethod($transaction),
